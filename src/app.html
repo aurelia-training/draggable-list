@@ -1,0 +1,10 @@
+<template>
+  <require from="./draggable-list"></require>
+  <require from="./style.css"></require>
+  <select value.bind="listId">
+    <option value="fibonacci">fibonacci</option>
+    <option value="integers">integers</option>
+    <option value="people">people</option>
+  </select>
+  <draggable-list list-id.bind="listId"></draggable-list>
+</template>

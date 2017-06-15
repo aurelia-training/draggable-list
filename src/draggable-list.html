@@ -1,0 +1,9 @@
+<template>
+  <require from="./draggable-list.css"></require>
+  <div repeat.for="element of list" class="list-element">
+    <div class="element-handle" mousedown.trigger="select($index)">${$index == selectedElementIndex ? "&#x2195;" : "&#x2630;"}</div><!--
+ --><div class="element-text" id="element-${$index}">${element}</div>
+  </div>
+  <button id="save-list" click.trigger="saveList(null)">Save List</button>
+  <button id="reset-list" click.trigger="resetList()">Reset List</button>
+</template>
