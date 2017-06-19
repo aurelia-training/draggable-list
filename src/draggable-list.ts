@@ -7,6 +7,7 @@ export class DraggableList {
   list:Object;
   listGenerator:ListGenerator = new ListGenerator();
   selectedElementIndex:number;
+  elementList:HTMLElement;
 
   attached() {
     this.list = this.listGenerator.getList(this.listId).slice();
@@ -23,7 +24,9 @@ export class DraggableList {
   }
 
   static mousemoveHandler(event:MouseEvent) {
-    let listElements:HTMLCollection = document.getElementsByClassName("list-element");
+    //let listElements:HTMLCollection = document.getElementsByClassName("list-element");
+    console.log(document._this.elementList);
+    let listElements:HTMLCollection = document._this.elementList.children;
     let closestDistance:number = 1e5;
     let closestIndex:number = -1;
     for(let index = 0; index < listElements.length; index++) {
